@@ -1,0 +1,42 @@
+body{
+	background-color: #ccccff;
+}
+.head{
+	width: 100%;
+	height: 150px;
+	background-color: black;
+}
+.id1{
+	font-size: 100px;
+	text-align: center;
+	color: white;
+}
+.icon-bar{
+	text-align: center;
+}
+.icon-bar a{
+	float: left;
+	padding-top: 30px;
+	padding-left: 20px;
+	font-size: 30px;
+
+}
+@media screen and (max-width: 900px){
+	.head{
+	width: 100%;
+	height: 80px;
+	background-color: black;
+}
+	.id1{
+	font-size: 50px;
+	text-align: center;
+	color: white;
+	}
+	.icon-bar a{
+	display: block;
+	padding-top: 30px;
+	padding-left: 20px;
+	font-size: 30px;
+
+	}
+}

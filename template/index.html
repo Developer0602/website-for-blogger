@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>Blog website</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/css1.css' %}">
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-12 head">
+				<div class="col-lg-6">
+					<p class="id1">DAILY JOURNAL</p>
+				</div>
+				<div class="icon-bar col-lg-6 ">
+					<a href="{% url 'blog' %}"><i class="fa fa-home fa-2x"></i>&nbsp;HOME</a>
+					<a href="{% url 'about' %}"><i class="fa fa-address-book-o fa-2x"></i>&nbsp;ABOUT US</a>
+					<a href="{% url 'contact' %}"><i class="fa fa-phone-square fa-2x"></i>&nbsp;CONTACT US</a>
+					<a href="{% url 'trash' %}"><i class="fa fa-trash fa-2x"></i>&nbsp;TRASH</a>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid form1">
+			{%for title in titles %}
+				<div class="row">
+					<div class="col-lg-6" method="post">
+						<h2 class="card-title">{{ title.title }}</h2>
+						<p class="card-text text-muted h6">{{ title.author }} | {{ title.created_on}} </p>
+						<p class="card-text">{{title.content|slice:":200" }}</p>
+						<a href="{% url 'post_detail' title.slug %}" class="btn btn-primary">Read More &rarr;</a>
+					</div>
+				</div>
+			{%endfor%}
+		</div>
+	</div>
+
+</body>
+</html>
